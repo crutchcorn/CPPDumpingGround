@@ -1,3 +1,7 @@
+// I will explain step by step how this program works
+// Anything starting with // is a comment
+/* As is anything in between these. These can span many lines */
+
 // Includes - They define the commands we'll be using
 #include <iostream> // General output & more
 #include <fstream> // File manipulation (Input & output)
@@ -25,10 +29,12 @@ by specifying what datatype we will return (speak) after we think. In this case,
 The function (thought) is called loadQuestions, and can called by the computer to calculate and return data.
 */ 
 {
-	std::vector<question_t> out = {};
-	std::vector<std::string> filestr = {"q_default_1", "q_default_2"};
-	int qcounter = 1;
-	for (std::string filename : filestr)
+	std::vector<question_t> out = {}; // Creates a vector of question_t called out. We intialize it (create it and fill the data with) empty (data)
+	// To clarify, the VECTOR is created empty, not the data inside of it (which is question_t)
+	std::vector<std::string> filestr = {"q_default_1", "q_default_2"}; // Vector of strings called filestr that has two entries (strings) inside.
+	int qcounter = 1; // Integer called qcounter that equals one
+	for (std::string filename : filestr) // Called a for each loop, this takes that data inside of filestr, and loops through it for every entry inside
+	// And places the entires of such as a variable (only valid during that loop iteration) called filename
 	{
 		question_t question;
 
@@ -89,10 +95,4 @@ int main()
 	}
 	int size = questions.size();
 	std::cout << "You are done! Your score is: " << score << " out of " << size << std::endl;
-	/*
-	for (int i = 0; i < size; i++)
-	{
-		std::cout << questions[i].question << std::endl;
-	}
-	*/
 }
